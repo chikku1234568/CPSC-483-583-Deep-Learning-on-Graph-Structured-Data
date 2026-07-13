@@ -85,5 +85,35 @@ A^r ij represents no of r-length walks between i and j.
 
 Graph-Level Tasks, Features and Graph Kernels:
 - Kernel methods are widely-used for traditional ML for graph-level prediction.
-- a graph kernal answers 'how similar are these 2 graphs'?
+- a graph kernal answers 'how similar are these 2 graphs'? f(G1,G2)
+-- graphlet kernel
+-- weisfieler-lehman kernel
+-- random walk kernel
+-- shortest path kernel
+
+graphlet kernel is computed as
+![1783962630585](image/Slides2-Notes/1783962630585.png)
+
+BUT , Counting graphlets is expensive! 
+• Counting size-k graphlets for a graph with size n by enumeration takes n^k
+• This is unavoidable in the worst-case since subgraph isomorphism test 
+(judging whether a graph is a subgraph of another graph) is NP-hard.
+
+In weisfieler-lehman kernel , 
+we use color refinement to get graph feature vector for G1,G2.
+The inner product of the vectors is the kernel
+
+Task: Graph Generation
+generate graphs that fit some properties of the real graphs.
+• Traditional methods: generate by randomness based on some assumptions
+on the graph’s formulation process.
+examples:
+• Erdos-Renyi model -  each pair of nodes is connected with probability 'p'.
+• Watts-Strogatz model (small world model) : 
+    High clustering
+    Very short average path lengths
+• Barabási-Albert model : Nodes with many connections attract even more connections.
+• Kronecker model : Expand the graph by kronecker product , start with an initiator matrix.
+
+
 
